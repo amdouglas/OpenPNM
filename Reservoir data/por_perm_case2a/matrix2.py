@@ -1,10 +1,14 @@
 import numpy as np
 
-data = np.loadtxt("spe_phi_sample.prn")
+#data = np.loadtxt("spe_phi_sample.prn")
+data = np.genfromtxt("spe_phi_sample.csv", delimiter=',')
+
+#Try importing csv, see if it is a 1-d array
+
 
 print(data.shape)
 
-data = np.reshape(data, (60,85,2))
+data = np.reshape(data, (85,1,220))
 
 print(data.shape)
 

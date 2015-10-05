@@ -10,12 +10,18 @@ from mpl_toolkits.mplot3d import Axes3D
 
 data = np.loadtxt("spe_phi.dat")
 
-print(data.size)
+i = 2
+j = 3
+k = 4
+a = np.arange(k)
+
+t = np.tile(a,j*i).reshape((i,j,k))
+
+
+print(t)
 
 for x in np.nditer(data):
     print (x)
-
-
 
 
 #PLot stuff

@@ -4,7 +4,7 @@ data = np.loadtxt("spe_phi_sample.prn")
 
 print(data.shape)
 
-data = data.reshape(85,60,2)
+data = np.reshape(data, (60,85,2))
 
 print(data.shape)
 
@@ -14,8 +14,9 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.scatter(-z, x, y, c=y ,  zdir='z')
 
-ax.set_xlabel('Z')
-ax.set_ylabel('X')
-ax.set_zlabel('Y')
+ax.scatter(x, y, -z, c=data[x,y,z] ,  zdir='z')
+
+#ax.set_xlabel('X')
+#ax.set_ylabel('Y')
+#ax.set_zlabel('Z')
